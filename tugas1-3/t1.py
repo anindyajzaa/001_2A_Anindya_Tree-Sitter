@@ -22,3 +22,14 @@ print(tree_ifelse.root_node)
 print("=== KELAS ===")
 tree_kelas = parser.parse(kelas)
 print(tree_kelas.root_node)
+
+# node bernama atau anonim (pakai potongan fungsi)
+print("=== NODE ANONIM (FUNGSI) ===")
+for c in tree_fungsi.root_node.children[0].children:
+    print(c.type, "bernama" if c.is_named else "anonim")
+
+# kode sengaja dirusak (titik dua dihapus)
+print("=== KODE RUSAK ===")
+rusak = b"def sapa(nama)\n    return nama\n"
+tree_rusak = parser.parse(rusak)
+print(tree_rusak.root_node)
