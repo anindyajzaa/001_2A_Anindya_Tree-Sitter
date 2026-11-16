@@ -1,0 +1,14 @@
+=== FUNGSI ===
+(module (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (return_statement (identifier)))))
+=== IF/ELSE ===
+(module (if_statement condition: (comparison_operator (identifier) (integer)) consequence: (block (expression_statement (assignment left: (identifier) right: (integer)))) alternative: (else_clause body: (block (expression_statement (assignment left: (identifier) right: (integer)))))))
+=== KELAS ===
+(module (class_definition name: (identifier) body: (block (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (pass_statement))))))
+=== NODE ANONIM (FUNGSI) ===
+def anonim
+identifier bernama
+parameters bernama
+: anonim
+block bernama
+=== KODE RUSAK ===
+(module (ERROR (identifier) (parameters (identifier)) (identifier)))
