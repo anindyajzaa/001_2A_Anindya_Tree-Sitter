@@ -88,21 +88,25 @@
       }
     },
     "or_expression": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_expr"
-        },
-        {
-          "type": "STRING",
-          "value": "or"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_expr"
-        }
-      ]
+      "type": "PREC_LEFT",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          },
+          {
+            "type": "STRING",
+            "value": "or"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          }
+        ]
+      }
     },
     "_value": {
       "type": "CHOICE",
