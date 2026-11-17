@@ -104,3 +104,17 @@ kurung mendahulukan or
     (comparison
       (identifier)
       (number))))
+
+==================
+not dengan nilai boolean
+==================
+
+not archived = true
+
+---
+
+(query
+  (not_expression
+    (comparison
+      (identifier)
+      (boolean))))
