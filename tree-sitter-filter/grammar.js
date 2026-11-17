@@ -7,14 +7,20 @@ export default grammar({
     query: $ => $._expr,
 
     _expr: $ => choice(
-      $.comparison, $.and_expression, $.or_expression,
+      $.comparison, $.in_expression, $.and_expression, $.or_expression,
       $.not_expression, $.parenthesized,
     ),
 
     comparison: $ => seq(
       field('field', $.identifier),
-      field('operator', choice('=', '!=', '>', '<', '>=', '<=')),
+      field('operator', choice('=', '!=', '>', '<', '>=', '<=', 'contains')),
       field('value', $._value),
+    ),
+
+    in_expression: $ => seq(
+      field('field', $.identifier),
+      'in',
+      '(', $._value, repeat(seq(',', $._value)), ')',
     ),
 
     and_expression: $ => prec.left(2, seq(
