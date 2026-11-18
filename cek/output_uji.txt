@@ -1,0 +1,4 @@
+uji/panjang.py:1: fungsi proses_data terlalu panjang (34 baris)
+uji/rusak.py:1: sintaks error
+uji/todo.py:1: # TODO: tambahkan validasi input
+uji/todo.py:3: # FIXME: hasilnya salah untuk angka negatif
