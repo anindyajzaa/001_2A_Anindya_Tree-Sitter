@@ -44,7 +44,14 @@ def cek_file(path):
         print(f"{path}:{baris}: sintaks error")
 
 folder = Path(sys.argv[1])
+if not folder.is_dir():
+    print(f"Folder tidak ditemukan: {folder}")
+    sys.exit(1)
+
+jumlah_file = 0
 for path in folder.rglob("*.py"):
     if LEWATI.intersection(path.relative_to(folder).parts):
         continue
     cek_file(path)
+    jumlah_file += 1
+print(f"Selesai: {jumlah_file} file diperiksa")
